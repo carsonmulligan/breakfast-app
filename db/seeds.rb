@@ -15,7 +15,7 @@ el_taco = Restaurant.create(name: 'El Taco Mexican & Cocktails Bar', address: 'R
 puts "#{el_taco.name} restaurant created successfully"
 
 # Categories
-categories = ["Starters", "Sopas", "Saladas", "Tacos", "Burritos", "Vegetarian Specials", "Desserts", "Drinks"]
+categories = ["Breakfast Meals", "Breakfast Items", "Drinks"]
 
 categories.each_with_index do |category, index|
   Category.create(name: category, order: index)
@@ -23,203 +23,300 @@ categories.each_with_index do |category, index|
   puts "#{category} category created successfully"
 end
 
-starters_category = Category.find_by(name: "Starters")
-sopas_category = Category.find_by(name: "Sopas")
-salads_category = Category.find_by(name: "Saladas")
-tacos_category = Category.find_by(name: "Tacos")
-vegetarian_category = Category.find_by(name: "Vegetarian Specials")
-burritos_category = Category.find_by(name: "Burritos")
+breakfast_meals_category = Category.find_by(name: "Breakfast Meals")
+breakfast_items_category = Category.find_by(name: "Breakfast Items")
 drinks_category = Category.find_by(name: "Drinks")
-desserts_category = Category.find_by(name: "Desserts")
 
 # Dishes
 
 dishes = [
   {
-    name: 'Guacamole com Totopas',
-    description: 'Traditional mexican snack with hamdmade guacamole.',
-    price_cents: 650,
-    category: starters_category
+    name: 'Chick-fil-A® Chicken Biscuit Meal',
+    description: 'A breakfast portion of our famous boneless breast of chicken, seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a buttermilk biscuit baked fresh at each Restaurant.',
+    price_cents: 789,
+    category: breakfast_meals_category
   },
   {
-    name: 'Nachos com Carne de Porco Preto',
-    description: 'Traditional mexican snack cooked with melted cheese and black pork.',
-    price_cents: 850,
-    category: starters_category
+    name: 'Chick-fil-A Chick-n-Minis™ 4 Ct Meal',
+    description: 'Bite-sized Chick-fil-A® Nuggets nestled in warm, mini yeast rolls that are lightly brushed with a honey butter spread.',
+    price_cents: 919,
+    category: breakfast_meals_category
   },
   {
-    name: 'Quesadilla Normal',
-    description: 'Corn tortilla, filled with melted cheese accompanied with fresh queso.',
-    price_cents: 490,
-    category: starters_category
+    name: 'Hash Brown Scramble Burrito Meal',
+    description: 'A hearty morning meal of sliced grilled chicken, crispy Hash Browns, scrambled eggs and a blend of Monterey Jack and Cheddar cheeses. Made fresh each morning. Rolled in a warm flour tortilla. Served with Jalapeño Salsa.',
+    price_cents: 959,
+    category: breakfast_meals_category
   },
   {
-    name: 'Quesadillas com Tinga de Pollo',
-    description: 'Corn tortillas filled with melted cheese, with tinga de pollo.',
-    price_cents: 850,
-    category: starters_category
+    name: 'Hash Brown Scramble Bowl Meal',
+    description: 'A hearty morning meal of sliced Chick-fil-A Nuggets, crispy Hash Browns, scrambled eggs and a blend of Monterey Jack and Cheddar cheeses. Made fresh each morning. Served in a convenient bowl. Served with Jalapeño Salsa.',
+    price_cents: 959,
+    category: breakfast_meals_category
   },
   {
-    name: 'Quesadillas com Pollo Verde',
-    description: 'Corn tortillas filled with melted cheese, with pollo verde.',
-    price_cents: 850,
-    category: starters_category
+    name: 'Chicken, Egg & Cheese Biscuit Meal',
+    description: 'A breakfast portion of our famous boneless breast of chicken, seasoned to perfection, freshly breaded, pressure cooked in 100% refined peanut oil, a folded egg and cheese, served on a buttermilk biscuit baked fresh at each Restaurant.',
+    price_cents: 909,
+    category: breakfast_meals_category
   },
   {
-    name: 'Ceviche',
-    description: 'Fresh salmon cured in citrus juice, spiced with tomato, onion and cilantro.',
-    price_cents: 850,
-    category: starters_category
+    name: 'Bacon, Egg, & Cheese Biscuit Meal',
+    description: 'Delicious strips of smoked applewood bacon along with folded egg and cheese served on a freshly baked buttermilk biscuit.',
+    price_cents: 849,
+    category: breakfast_meals_category
   },
   {
-    name: 'Gazpacho',
-    description: 'Cold soup accompanised with cucumber bell pepper tomato & basil.',
-    price_cents: 790,
-    category: sopas_category
+    name: 'Sausage, Egg, & Cheese Biscuit Meal',
+    description: 'A tasty pork sausage patty along with a folded egg and cheese served on a freshly baked buttermilk biscuit.',
+    price_cents: 849,
+    category: breakfast_meals_category
   },
   {
-    name: 'Mixed Salad',
-    description: 'Grilled sliced of roast beef mixed with fresh herbs, olives, cherry tomato, bell pepper garnished with red/white pickled onion.',
-    price_cents: 950,
-    category: salads_category
+    name: 'Chicken, Egg, & Cheese Muffin Meal',
+    description: 'A breakfast portion of our famous boneless breast of chicken, with folded egg and American cheese, served on a toasted multigrain English Muffin.',
+    price_cents: 935,
+    category: breakfast_meals_category
   },
   {
-    name: 'El Tacos Mexican Special Salad',
-    description: 'Dicely chopped fresh avocado, pepper cherry tomato olives feta cheese and corn garnished with chipotle.',
-    price_cents: 950,
-    category: salads_category
+    name: 'Bacon, Egg, & Cheese Muffin Meal',
+    description: 'Delicious strips of smoked applewood bacon, folded egg and American cheese served on a toasted multigrain English muffin.',
+    price_cents: 869,
+    category: breakfast_meals_category
   },
   {
-    name: 'Tacos Tinga de Pollo',
-    description: 'Braised chicken stewed and cooked with boiled tomato along with cumin and chile chipotle',
-    price_cents: 1190,
-    category: tacos_category
+    name: 'Sausage, Egg, & Cheese Muffin Meal',
+    description: 'Savory pork sausage, freshly prepared eggs and American cheese served on a toasted multigrain English muffin.',
+    price_cents: 869,
+    category: breakfast_meals_category
   },
   {
-    name: 'Tacos de Camaron',
-    description: 'Sauted shrimp in cilantro ,garlic and lime served with cabbage and chipotle mayonnaise',
-    price_cents: 1090,
-    category: tacos_category
+    name: 'Chick-fil-A® Chicken Biscuit',
+    description: 'A breakfast portion of our famous boneless breast of chicken, seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a buttermilk biscuit baked fresh at each Restaurant.',
+    price_cents: 224,
+    category: breakfast_items_category
   },
   {
-    name: 'Enchilida Suiza',
-    description: 'Grilled chicken wrapped and topped with melted cheese served with letuce and red pickled onion.',
-    price_cents: 1190,
-    category: tacos_category
+    name: 'Chick-fil-A Chick-n-Minis™',
+    description: 'Bite-sized Chick-fil-A® Nuggets nestled in warm, mini yeast rolls that are lightly brushed with a honey butter spread.',
+    price_cents: 529,
+    category: breakfast_items_category
   },
   {
-    name: 'Tacos de Carnitas',
-    description: 'Marinated roasted pork slowly cooked and caramelized with orange and garlic.',
-    price_cents: 1190,
-    category: tacos_category
+    name: 'Egg White Grill',
+    description: 'A breakfast portion of grilled chicken with a hint of citrus, served on a toasted multigrain English muffin with egg whites and American cheese.',
+    price_cents: 386,
+    category: breakfast_items_category
   },
   {
-    name: 'Tacos e Cochinita Pibil',
-    description: 'Pork slowly roasted in a banana leaf with achiote,lime and orange juice topped with red pickled onion.',
-    price_cents: 1090,
-    category: tacos_category
+    name: 'Hash Brown Scramble Burrito',
+    description: 'A hearty morning meal of sliced Chick-fil-A Nuggets, crispy Hash Browns, scrambled eggs and a blend of Monterey Jack and Cheddar cheeses. Made fresh each morning. Rolled in a warm flour tortilla. Served with Jalapeño Salsa.',
+    price_cents: 569,
+    category: breakfast_items_category
   },
   {
-    name: 'Tacos com Pollo em Salsa Verde',
-    description: 'Braised chicken stewed and cooked with salsa verde.',
-    price_cents: 1190,
-    category: tacos_category
+    name: 'Hash Brown Scramble Bowl',
+    description: 'A hearty morning meal of sliced Chick-fil-A Nuggets, crispy Hash Browns, scrambled eggs and a blend of Monterey Jack and Cheddar cheeses. Made fresh each morning. Served in a convenient bowl. Served with Jalapeño Salsa.',
+    price_cents: 569,
+    category: breakfast_items_category
   },
   {
-    name: 'Tacos com Carne Assada',
-    description: 'Grilled vazia with grilled onion served with guacamole ,cilantro onion & lime',
-    price_cents: 1490,
-    category: tacos_category
+    name: 'Chicken, Egg & Cheese Biscuit',
+    description: 'A breakfast portion of our famous boneless breast of chicken, seasoned to perfection, freshly breaded, pressure cooked in 100% refined peanut oil, a folded egg and cheese, served on a buttermilk biscuit baked fresh at each Restaurant.',
+    price_cents: 519,
+    category: breakfast_items_category
   },
   {
-    name: 'Tacos de Carne Assada com Salsa Seca',
-    description: 'Thick slice of tenderloin grilled and served with grind mixture of fried garlic & chile arbol.',
-    price_cents: 1090,
-    category: tacos_category
+    name: 'Bacon, Egg & Cheese Biscuit',
+    description: 'Delicious strips of smoked applewood bacon along with folded egg and cheese served on a freshly baked buttermilk biscuit.',
+    price_cents: 455,
+    category: breakfast_items_category
   },
   {
-    name: 'Fajita',
-    description: 'Grilled meat, bell pepper served as a taco on corn tortilla with lime, avocado and sour crème.',
-    price_cents: 1090,
-    category: tacos_category
+    name: 'Sausage, Egg & Cheese Biscuit',
+    description: 'A tasty pork sausage patty along with a folded egg and cheese served on a freshly baked buttermilk biscuit.',
+    price_cents: 455,
+    category: breakfast_items_category
   },
   {
-    name: 'Feijão Preto',
-    description: 'Refried black beans serves with fresh queso and salsa mayonnaise chipotle.',
-    price_cents: 990,
-    category: vegetarian_category
+    name: 'Chicken, Egg, & Cheese Muffin',
+    description: 'A breakfast portion of our famous boneless breast of chicken, with folded egg and American cheese, served on a toasted multigrain English Muffin.',
+    price_cents: 545,
+    category: breakfast_items_category
   },
   {
-    name: 'Hongos al Ajillo',
-    description: 'Mushrooms with chilli guagillo flavoured with fried garlic.',
-    price_cents: 1000,
-    category: vegetarian_category
+    name: 'Bacon, Egg & Cheese Muffin',
+    description: 'Delicious strips of smoked applewood bacon, folded egg and American cheese served on a toasted multigrain English muffin.',
+    price_cents: 479,
+    category: breakfast_items_category
   },
   {
-    name: 'Burritos com Frango Assado',
-    description: 'Grilled chicken wrapped in traditional mexican handmade tortilla with refried beans and queso.',
-    price_cents: 1050,
-    category: burritos_category
+    name: 'Sausage, Egg & Cheese Muffin',
+    description: 'Savory pork sausage, freshly prepared eggs and American cheese served on a toasted multigrain English muffin.',
+    price_cents: 479,
+    category: breakfast_items_category
   },
   {
-    name: 'Burritos com Vazia',
-    description: 'Grilled vazia de novilho wrapped in traditional Mexican homemade tortilla with refried beans and queso.',
-    price_cents: 1190,
-    category: burritos_category
+    name: 'Buttered Biscuit',
+    description: 'A delicious buttermilk biscuit baked fresh at each Restaurant. Served lightly buttered or plain.',
+    price_cents: 175,
+    category: breakfast_items_category
   },
   {
-    name: 'Corona Extra',
-    description: 'Mexican beer 4.5% vol.',
-    price_cents: 385,
+    name: 'English Muffin',
+    description: 'Toasted multigrain English muffin.',
+    price_cents: 199,
+    category: breakfast_items_category
+  },
+  {
+    name: 'Hash Browns',
+    description: 'Crispy potato medallions cooked in canola oil.',
+    price_cents: 179,
+    category: breakfast_items_category
+  },
+  {
+    name: 'Greek Yogurt Parfait',
+    description: 'Creamy, organic vanilla bean Greek yogurt with fresh berries and your choice of toppings.',
+    price_cents: 559,
+    category: breakfast_items_category
+  },
+  {
+    name: 'Fruit Cup',
+    description: 'A nutritious fruit mix made with chopped pieces of red and green apples, mandarin orange segments, fresh strawberry slices, and blueberries, served chilled. Prepared fresh daily.',
+    price_cents: 475,
+    category: breakfast_items_category
+  },
+  {
+    name: 'Chick-fil-A® Lemonade',
+    description: 'Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water.',
+    price_cents: 299,
     category: drinks_category
   },
   {
-    name: 'Modelo Especial',
-    description: 'Mexican beer alc 4.5 % , 35.5 cl.',
-    price_cents: 410,
-    category: drinks_category
-  },
-  {
-    name: 'Somersby',
-    description: 'Apple sparkling Cider alc. 4.5 % vol. 33cl.',
-    price_cents: 385,
-    category: drinks_category
-  },
-  {
-    name: 'Pacifico Clara',
-    description: 'Mexican beer. alc. 4.5 % vol..35.5 cl.',
-    price_cents: 410,
-    category: drinks_category
-  },
-  {
-    name: 'Desperados',
-    description: 'Beer flavoured with Tequla alc. 5.9 % vol 33cl.',
-    price_cents: 410,
-    category: drinks_category
-  },
-  {
-    name: 'Sagres',
-    description: 'Portuguese beer with alc 5.0 % vol 33cl.',
+    name: 'Freshly-Brewed Iced Tea Sweetened',
+    description: 'Freshly-brewed each day from a blend of tea leaves. Available sweetened with real cane sugar.',
     price_cents: 300,
     category: drinks_category
   },
   {
-    name: 'Caipirinha',
-    description: ' Classic Brazilian drink.',
-    price_cents: 300,
+    name: 'Freshly-Brewed Iced Tea Unsweetened',
+    description: ' Freshly-brewed each day from a blend of tea leaves. Available unsweetened.',
+    price_cents: 245,
     category: drinks_category
   },
   {
-    name: 'Caipirinha com Maracuja',
-    description: ' Classic Brazilian drink.',
-    price_cents: 300,
+    name: 'Chick-fil-A® Diet Lemonade',
+    description: 'Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, Splenda® No Calorie Sweetener, and water.',
+    price_cents: 299,
     category: drinks_category
   },
   {
-    name: 'Churros',
-    description: 'Sweet Mexican dessert with brown sugar and chocalate sauce',
-    price_cents: 390,
-    category: desserts_category
+    name: '1/2 Sweet Tea 1/2 Unsweet Tea',
+    description: 'Freshly-brewed each day from a blend of tea leaves. Available sweetened with real cane sugar.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Iced Coffee',
+    description: 'Handcrafted daily, made with a custom blend of cold-brewed coffee and 2% milk, sweetened with pure cane sugar and served over ice. Our coffee beans are sourced by THRIVE Farmers, a farmer-direct coffee company that enriches the lives and communities of those who grow it. Available all day in Original or Vanilla.',
+    price_cents: 389,
+    category: drinks_category
+  },
+  {
+    name: 'Dr Pepper®',
+    description: 'Fountain beverage. Product of Keurig Dr Pepper, Inc.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Diet Dr Pepper®',
+    description: 'Fountain beverage. Product of Keurig Dr Pepper, Inc.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Coca-Cola®',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Diet Coke®',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Coke® Zero Sugar',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Coca-Cola® Cherry',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Sprite®',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Barq\'s® Root Beer',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'Hi-C® Fruit Punch',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'POWERADE®',
+    description: 'Fountain beverage. A product of The Coca-Cola Company.',
+    price_cents: 245,
+    category: drinks_category
+  },
+  {
+    name: 'DASANI® Bottled Water',
+    description: 'Purified water that is carefully designed and enhanced with minerals for a pure, fresh taste. DASANI® is a registered trademark of The Coca-Cola® Company.',
+    price_cents: 259,
+    category: drinks_category
+  },
+  {
+    name: 'Honest Kids® Apple Juice',
+    description: 'Honest Kids® Apple Juice (juice box with straw).',
+    price_cents: 215,
+    category: drinks_category
+  },
+  {
+    name: 'Simply Orange®',
+    description: '100% pure-squeezed, pasteurized Orange Juice.',
+    price_cents: 359,
+    category: drinks_category
+  },
+  {
+    name: '1% Chocolate Milk',
+    description: '',
+    price_cents: 215,
+    category: drinks_category
+  },
+  {
+    name: '1% Milk',
+    description: '1% Cows milk',
+    price_cents: 215,
+    category: drinks_category
+  },
+  {
+    name: 'Gallon Beverages',
+    description: 'Gallon beverage filled with your choice of tea or lemonade',
+    price_cents: 1559,
+    category: drinks_category
   },
 ]
 
