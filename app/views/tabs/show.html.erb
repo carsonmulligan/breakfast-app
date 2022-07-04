@@ -1,8 +1,11 @@
+
 <div class="container">
   <div class="d-flex justify-content-between align-items-center mb-5">
     <h1 class="tables text-start mb-0 fw-bold">Table <%= @tab.table_number  %></h1>
     <h5 class="text-muted mb-0">Total: <%= display_price(@tab.total_cents) %></h5>
   </div>
+
+  <!-- Menu items -->
 
   <% @tab.dishes.each do |dish| %>
     <div class="card card-rounded p-3 mb-3">
