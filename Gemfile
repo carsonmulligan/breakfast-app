@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 gem 'rqrcode'
 
+gem 'hotwire-rails'
+
 gem 'turbo-rails'
 
 gem 'multi-dates-picker-rails'
