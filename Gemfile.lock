@@ -267,6 +267,10 @@ GEM
     stripe (6.2.0)
     thor (1.2.1)
     tilt (2.0.10)
+    turbo-rails (1.1.1)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -332,6 +336,7 @@ DEPENDENCIES
   simple_form!
   spring
   stripe
+  turbo-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

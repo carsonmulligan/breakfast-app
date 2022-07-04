@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 gem 'rqrcode'
 
+gem 'turbo-rails'
+
 gem 'multi-dates-picker-rails'
 
 gem 'cloudinary', '~> 1.16.0'
