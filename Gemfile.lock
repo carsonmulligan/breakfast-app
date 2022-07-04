@@ -158,6 +158,7 @@ GEM
       money (~> 6.13)
       railties (>= 3.0)
     msgpack (1.5.2)
+    multi-dates-picker-rails (0.1.1)
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.6-arm64-darwin)
@@ -316,6 +317,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.3)
   money-rails
+  multi-dates-picker-rails
   pg (~> 1.1)
   pry-byebug
   pry-rails
