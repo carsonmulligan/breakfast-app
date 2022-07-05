@@ -342,3 +342,4 @@ end
 
   puts "Tab #{n + 1} created successfully"
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
