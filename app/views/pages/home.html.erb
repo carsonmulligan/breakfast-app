@@ -4,7 +4,7 @@
 
       <div class="text-center">
         <%= link_to "Get Started", new_user_session_path, class: "button btn-lg btn-primary px-4 py-3 btn-rounded no-decoration" unless user_signed_in? %>
-        <%# <%= link_to "Log out", destroy_user_session_path, class: "button btn btn-lg btn-primary", method: :delete if user_signed_in? %>
+        <%= link_to "Log out", destroy_user_session_path, class: "button btn btn-lg btn-primary", method: :delete if user_signed_in? %>
         <%= link_to "Get started", tabs_path, class: "button btn btn-lg btn-primary px-4" if user_signed_in? %>
       </div>
     </div>
