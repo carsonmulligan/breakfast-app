@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: 'pages#home'
-
+  resources :meetings, only: [:index]
   resources :restaurants
   resources :dishes, except: [:index]
   resources :tabs, only: [:new, :index, :show] do
+    resources :meetings, only: [:index]
     resources :dishes, only: [:index]
     resources :tab_dishes, only: [:create, :destroy]
     resources :split, only: [:show]
